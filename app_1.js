@@ -35,13 +35,14 @@ app.use('/graphql', graphqlHTTP ({
 
         `), //====> schemas are defined
 
-//====> where resovler names are specified, resovler is just a function
+//====> where resovler names are specified, Which has all resolver functions 
+//these resolver function need to match with schema by name
     rootValue:  {
-        events: () => {
+        events: () => {  // anonymous fuction
             return ['Code festival','Project Hackthon','Challege Event']
         },
 
-        createEvent: (args) => {
+        createEvent: (args) => {       // fucntion with args
             const eventName = args.name;
             return eventName;
         }
